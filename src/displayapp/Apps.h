@@ -22,6 +22,7 @@ namespace Pinetime {
       HeartRate,
       Navigation,
       StopWatch,
+      Iot,
       Metronome,
       Motion,
       Steps,

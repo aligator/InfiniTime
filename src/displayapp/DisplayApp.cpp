@@ -18,6 +18,7 @@
 #include "displayapp/screens/InfiniPaint.h"
 #include "displayapp/screens/Paddle.h"
 #include "displayapp/screens/StopWatch.h"
+#include "displayapp/screens/Iot.h"
 #include "displayapp/screens/Meter.h"
 #include "displayapp/screens/Metronome.h"
 #include "displayapp/screens/Music.h"
@@ -425,7 +426,7 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       ReturnApp(Apps::Settings, FullRefreshDirections::Down, TouchEvents::SwipeDown);
       break;
     case Apps::SettingShakeThreshold:
-      currentScreen = std::make_unique<Screens::SettingShakeThreshold>(this, settingsController,motionController,*systemTask);
+      currentScreen = std::make_unique<Screens::SettingShakeThreshold>(this, settingsController, motionController, *systemTask);
       ReturnApp(Apps::Settings, FullRefreshDirections::Down, TouchEvents::SwipeDown);
       break;
     case Apps::BatteryInfo:
@@ -443,6 +444,9 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       break;
     case Apps::StopWatch:
       currentScreen = std::make_unique<Screens::StopWatch>(this, *systemTask);
+      break;
+    case Apps::Iot:
+      currentScreen = std::make_unique<Screens::Iot>(this);
       break;
     case Apps::Twos:
       currentScreen = std::make_unique<Screens::Twos>(this);

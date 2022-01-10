@@ -57,6 +57,7 @@ namespace Pinetime {
 
         static constexpr const char* highlight = "\xEE\xA4\x87"; // e907
 
+        static constexpr const char* iot = "\xEE\xA4\x86"; // e906
       }
     }
   }
