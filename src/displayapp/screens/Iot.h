@@ -1,26 +1,30 @@
 #pragma once
 
+#include <FreeRTOS.h>
+#include <lvgl/src/lv_core/lv_obj.h>
+#include <string>
 #include "displayapp/screens/Screen.h"
-#include "components/datetime/DateTimeController.h"
-#include "displayapp/LittleVgl.h"
 
-#include "FreeRTOS.h"
-#include "portmacro_cmsis.h"
 
-#include <array>
-#include "systemtask/SystemTask.h"
+namespace Pinetime {
+  namespace Controllers {
+    class IotService;
+  }
 
-namespace Pinetime::Applications::Screens {
+  namespace Applications {
+    namespace Screens {
+      class Iot : public Screen {
+      public:
+        Iot(DisplayApp* app, Pinetime::Controllers::IotService& iot);
+        ~Iot() override;
+        void Refresh() override;
+        void OnEvent(lv_obj_t* obj, lv_event_t event);
 
-  class Iot : public Screen {
-  public:
-    Iot(DisplayApp* app);
-    ~Iot() override;
-    void Refresh() override;
-    void OnEvent(lv_obj_t* obj, lv_event_t event);
-    bool OnButtonPushed() override;
+      private:
+        lv_obj_t *light1Toggle;
 
-  private:
-    lv_obj_t *light1Toggle;
-  };
+        Pinetime::Controllers::IotService& iotService;
+      };
+    }
+  }
 }

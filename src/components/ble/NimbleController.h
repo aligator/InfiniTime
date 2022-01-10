@@ -21,6 +21,7 @@
 #include "components/ble/ServiceDiscovery.h"
 #include "components/ble/MotionService.h"
 #include "components/ble/weather/WeatherService.h"
+#include "components/ble/IotService.h"
 #include "components/fs/FS.h"
 #include "components/ble/FSService.h"
 
@@ -77,6 +78,9 @@ namespace Pinetime {
       Pinetime::Controllers::WeatherService& weather() {
         return weatherService;
       };
+      Pinetime::Controllers::IotService& iot() {
+        return iotService;
+      };
 
       uint16_t connHandle();
       void NotifyBatteryLevel(uint8_t level);
@@ -105,6 +109,7 @@ namespace Pinetime {
       CurrentTimeService currentTimeService;
       MusicService musicService;
       WeatherService weatherService;
+      IotService iotService;
       NavigationService navService;
       BatteryInformationService batteryInformationService;
       ImmediateAlertService immediateAlertService;

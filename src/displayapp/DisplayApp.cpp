@@ -446,7 +446,7 @@ void DisplayApp::LoadApp(Apps app, DisplayApp::FullRefreshDirections direction) 
       currentScreen = std::make_unique<Screens::StopWatch>(this, *systemTask);
       break;
     case Apps::Iot:
-      currentScreen = std::make_unique<Screens::Iot>(this);
+      currentScreen = std::make_unique<Screens::Iot>(this, systemTask->nimble().iot());
       break;
     case Apps::Twos:
       currentScreen = std::make_unique<Screens::Twos>(this);

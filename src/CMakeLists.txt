@@ -486,6 +486,7 @@ list(APPEND SOURCE_FILES
         components/ble/AlertNotificationService.cpp
         components/ble/MusicService.cpp
         components/ble/weather/WeatherService.cpp
+        components/ble/IotService.cpp
         components/ble/NavigationService.cpp
         displayapp/fonts/lv_font_navi_80.c
         components/ble/BatteryInformationService.cpp
@@ -559,6 +560,7 @@ list(APPEND RECOVERY_SOURCE_FILES
         components/ble/AlertNotificationService.cpp
         components/ble/MusicService.cpp
         components/ble/weather/WeatherService.cpp
+        components/ble/IotService.cpp
         components/ble/BatteryInformationService.cpp
         components/ble/FSService.cpp
         components/ble/ImmediateAlertService.cpp
@@ -681,6 +683,7 @@ set(INCLUDE_FILES
         components/ble/HeartRateService.h
         components/ble/MotionService.h
         components/ble/weather/WeatherService.h
+        components/ble/IotService.h
         components/settings/Settings.h
         components/timer/TimerController.h
         components/alarm/AlarmController.h
